@@ -1,7 +1,11 @@
-{ pkgs }: {
+{ pkgs }: let 
+  python = pkgs.python310.withPackages(ps: with ps; [pytest]); 
+in
+  {
   deps = [
+    pkgs.poetry
     pkgs.entr
-    pkgs.python310Full
+    python
     pkgs.replitPackages.prybar-python310
     pkgs.replitPackages.stderred
   ];
