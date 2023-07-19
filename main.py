@@ -11,11 +11,11 @@ To start, we can look to a piece of computer history, the AGC (Apollo Guidance C
 Our goal today is to build the primitives, and then some combination of them to make more complex pieces like gates, and if time permits, making an ALU.
 
 Along the way, you can expect to learn some new python tricks you may be less familiar with, and some design patterns to aid in meeting our users preferred style of writing their new models. You'll learn some important reasons why we test software, and how to automate it. You can also just puddle around in the REPL with your newly created objects. This is your playground!
-"""
-"""
+
+--------------------
 The wire
-"""
-"""
+--------------------
+
 Our first piece of reality to model is a wire with charge. For now, this can be a container, but in the next step we will add a notion of "connection" to wires and the propagation of information that happens
 
 Here is a sample REPL experience we would like to have for making independent wires:
@@ -49,9 +49,10 @@ class Wire:
 
 
 """
+--------------------
 The connection
-"""
-"""
+--------------------
+
 What should happen when two wires are connected, and one end becomes charged?
 
 o---A---o---B---o
