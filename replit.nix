@@ -1,11 +1,13 @@
 { pkgs }: let 
   python = pkgs.python312.withPackages(ps: with ps; [pytest]); 
+  ruby = pkgs.ruby;
 in
   {
   deps = [
     pkgs.uv
     pkgs.entr
     python
+    ruby
   ];
   env = {
     PYTHON_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
