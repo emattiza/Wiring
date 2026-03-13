@@ -10,6 +10,7 @@ hidden = ["venv", ".config", "**/__pycache__", "**/.mypy_cache", "**/*.pyc"]
 # Specifies which nix channel to use when building the environment.
 [nix]
 channel = "stable-25_05"
+packages = ["gdb"]
 
 # The command to start the interpreter.
 [interpreter]

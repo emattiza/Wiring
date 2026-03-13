@@ -4,21 +4,34 @@ Wiring: Simulating Digital Logic with Python
 Shortened material from day 1 of a course with David Beazley
 http://dabeaz.com/courses if you want to learn more
 
-Digital Computers have come a long way, and their synthesis is pretty intricate today and on a much smaller scale physically. However, much was accomplished with less many years ago, and we are going to explore building a system with Python as a DSL or modeling language for a real world hardware design.
+Digital Computers have come a long way, and their synthesis is pretty intricate
+today and on a much smaller scale physically. However, much was accomplished
+with less many years ago, and we are going to explore building a system with
+Python as a DSL or modeling language for a real world hardware design.
 
-To start, we can look to a piece of computer history, the AGC (Apollo Guidance Computer) [Link here](http://www.righto.com/2019/09/a-computer-built-from-nor-gates-inside.html)
+To start, we can look to a piece of computer history, the AGC (Apollo Guidance
+Computer) [Link
+here](http://www.righto.com/2019/09/a-computer-built-from-nor-gates-inside.html)
 
-Our goal today is to build the primitives, and then some combination of them to make more complex pieces like gates, and if time permits, making an ALU.
+Our goal today is to build the primitives, and then some combination of them to
+make more complex pieces like gates, and if time permits, making an ALU.
 
-Along the way, you can expect to learn some new python tricks you may be less familiar with, and some design patterns to aid in meeting our users preferred style of writing their new models. You'll learn some important reasons why we test software, and how to automate it. You can also just puddle around in the REPL with your newly created objects. This is your playground!
+Along the way, you can expect to learn some new python tricks you may be less
+familiar with, and some design patterns to aid in meeting our users preferred
+style of writing their new models. You'll learn some important reasons why we
+test software, and how to automate it. You can also just puddle around in the
+REPL with your newly created objects. This is your playground!
 
 --------------------
 The wire
 --------------------
 
-Our first piece of reality to model is a wire with charge. For now, this can be a container, but in the next step we will add a notion of "connection" to wires and the propagation of information that happens
+Our first piece of reality to model is a wire with charge. For now, this can be
+a container, but in the next step we will add a notion of "connection" to wires
+and the propagation of information that happens
 
-Here is a sample REPL experience we would like to have for making independent wires:
+Here is a sample REPL experience we would like to have for making independent
+wires:
 
 >>> a = Wire()
 >>> a
@@ -63,7 +76,8 @@ o---A---o---C---o
         |
         +---D---o
 
-What kinds of interactions do A and B need to have to communicate their state and let their neighbors know?
+What kinds of interactions do A and B need to have to communicate their state
+and let their neighbors know?
 
 See and uncomment test_basic_connection for an example repl session
 """
@@ -92,7 +106,9 @@ def connect(a, b):
 """
 The gate and a single operation
 
-We are going to create a NOR3 gate. Our only constraint is we have access to one operation: a nor3 function. You will not be allowed to do any digital logic unless it passes through this nor3 function. Here it is:
+We are going to create a NOR3 gate. Our only constraint is we have access to one
+operation: a nor3 function. You will not be allowed to do any digital logic
+unless it passes through this nor3 function. Here it is:
 """
 
 
@@ -123,9 +139,12 @@ Here is a sample repl Session utilizing this NOR3 gate
 """
 Other Logic Gates
 
-Now go ahead and write some common logic gates! You will only be allowed to use the NOR3 gate you defined above. 
+Now go ahead and write some common logic gates! You will only be allowed to use
+the NOR3 gate you defined above. 
 
-Author Note: Be warned though! If you don't test, how you will be sure they work correctly as a unit and a system when you use them in something larger and more complex?
+Author Note: Be warned though! If you don't test, how you will be sure they work
+correctly as a unit and a system when you use them in something larger and more
+complex?
 
 Some Other Gates:
 NOT(x, out)         x      out
