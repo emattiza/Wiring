@@ -9,7 +9,7 @@ hidden = ["venv", ".config", "**/__pycache__", "**/.mypy_cache", "**/*.pyc"]
 
 # Specifies which nix channel to use when building the environment.
 [nix]
-channel = "stable-22_11"
+channel = "stable-25_05"
 
 # The command to start the interpreter.
 [interpreter]
@@ -17,7 +17,7 @@ channel = "stable-22_11"
   args = [
     "stderred",
     "--",
-    "prybar-python310",
+    "prybar-python312",
     "-q",
     "--ps1",
     "\u0001\u001b[33m\u0002\u0001\u001b[00m\u0002 ",
@@ -26,9 +26,9 @@ channel = "stable-22_11"
   env = { LD_LIBRARY_PATH = "$PYTHON_LD_LIBRARY_PATH" }
 
 [env]
-VIRTUAL_ENV = "${REPL_HOME}/venv"
-PATH = "${VIRTUAL_ENV}/bin"
-PYTHONPATH = "$PYTHONHOME/lib/python3.10:${VIRTUAL_ENV}/lib/python3.10/site-packages"
+# VIRTUAL_ENV = "${REPL_HOME}/venv"
+# PATH = "${VIRTUAL_ENV}/bin"
+# PYTHONPATH = "$PYTHONHOME/lib/python3.10:${VIRTUAL_ENV}/lib/python3.12/site-packages"
 REPLIT_POETRY_PYPI_REPOSITORY = "https://package-proxy.replit.com/pypi/"
 MPLBACKEND = "TkAgg"
 POETRY_CACHE_DIR = "${REPL_HOME}/.cache/pypoetry"
@@ -105,3 +105,6 @@ start = "pylsp"
 
 [deployment]
 run = ["sh", "-c", "python3 main.py"]
+
+[agent]
+expertMode = true

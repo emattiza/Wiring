@@ -78,12 +78,12 @@ def connect(a, b):
 #   >>> a = Wire()
 #   >>> b = Wire()
 #   >>> connect(a, b)
-#   >>> a.value = 1
+#   >>> a.value = 0
 #   >>> a
 #   Wire(0)
 #   >>> b
-#   Wire(1)
-#   >>> b.value = 0
+#   Wire(0)
+#   >>> b.value = 1
 #   >>> a
 #   Wire(0)
 #   >>> b
